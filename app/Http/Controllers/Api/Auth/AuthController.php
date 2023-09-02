@@ -7,9 +7,6 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Traits\apiResponseTrait;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
@@ -28,7 +25,7 @@ class AuthController extends Controller
     *
     * return the user and his token
     */
-    public  function register(RegisterRequest $request){
+    public  function register(RegisterRequest $request) {
         $user = User::create([
                   'name' => $request->name,
                   'email' => $request->email,
